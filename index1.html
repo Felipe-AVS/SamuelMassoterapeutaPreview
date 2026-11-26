@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Samuel Massoterapia — massoterapia com tempo e presença, em Itu. Relaxante, terapêutica e pedras quentes.">
+  <title>Samuel Massoterapia — Respire fundo. Volte a si.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #4A5A36;
+      --green-dark: #2E3A22;
+      --mint: #C9D3B0;
+      --terra: #7D8B5C;
+      --sand: #F6F2E8;
+      --sand-2: #EFE9DB;
+      --ink: #2B2A24;
+      --ink-soft: #6A6A5C;
+      --line: rgba(27, 38, 34, .12);
+      --wa: #25D366;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--sand);
+      color: var(--ink);
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      line-height: 1.04;
+    }
+    h1 em, h2 em { font-style: italic; color: var(--terra); }
+    .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    section { padding: clamp(64px, 9vw, 112px) 0; }
+    .eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--ink-soft);
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--terra);
+    }
+    .lead { font-size: clamp(16px, 1.4vw, 18px); color: var(--ink-soft); max-width: 46ch; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 26px; border-radius: 999px; font-size: 14px; font-weight: 500;
+      min-height: 50px; transition: background .3s, transform .3s, border-color .3s;
+    }
+    .btn-solid { background: var(--green); color: #fff; }
+    .btn-solid:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    /* Topo simples */
+    .top {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(246, 242, 232, .92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-family: "Cormorant Garamond", serif; font-size: 22px; }
+    .brand em { font-style: italic; color: var(--terra); }
+    .top-cta { font-size: 13px; font-weight: 500; color: var(--green); }
+
+    /* Hero */
+    .hero { padding-top: clamp(48px, 7vw, 88px); }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center;
+    }
+    .hero h1 { font-size: clamp(48px, 7vw, 92px); margin-bottom: 24px; }
+    .hero .lead { margin-bottom: 32px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-figure {
+      border-radius: 200px 200px 28px 28px; overflow: hidden; aspect-ratio: 4/5;
+      background: var(--sand-2);
+    }
+    .hero-figure img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Sobre */
+    .sobre { background: var(--sand-2); border-top: 1px solid var(--line); }
+    .sobre-inner { max-width: 680px; }
+    .sobre h2 { font-size: clamp(38px, 5vw, 56px); margin-bottom: 28px; }
+    .sobre p + p { margin-top: 18px; }
+    .sobre p { color: var(--ink-soft); line-height: 1.8; }
+    .assinatura { margin-top: 36px; display: flex; align-items: center; gap: 16px; }
+    .assinatura .rule { width: 48px; height: 1px; background: var(--terra); }
+    .assinatura strong { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 400; display: block; }
+    .assinatura span { font-size: 13px; color: var(--ink-soft); }
+
+    /* Experiências */
+    .exp h2 { font-size: clamp(38px, 5vw, 60px); margin-bottom: 40px; }
+    .exp-list { border-top: 1px solid var(--line-strong, rgba(27,38,34,.18)); }
+    .exp-item {
+      display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: baseline;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .exp-num { font-size: 12px; letter-spacing: .14em; color: var(--ink-soft); }
+    .exp-title { font-family: "Cormorant Garamond", serif; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; }
+    .exp-desc { font-size: 15px; color: var(--ink-soft); margin-top: 6px; max-width: 54ch; }
+    .exp-time { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+
+    /* Citação */
+    .quote { background: var(--green); color: #fff; text-align: center; }
+    .quote blockquote {
+      font-family: "Cormorant Garamond", serif; font-size: clamp(30px, 4.4vw, 52px);
+      line-height: 1.15; max-width: 760px; margin: 0 auto;
+    }
+    .quote blockquote em { color: #B9C49A; }
+    .quote-by { margin-top: 20px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--mint); }
+
+    /* Contato */
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+    .contato h2 { font-size: clamp(40px, 5.4vw, 64px); margin-bottom: 20px; }
+    .info { margin-top: 32px; border-top: 1px solid var(--line); }
+    .info div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .info dt { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; }
+    .info dd { margin: 0; }
+    .wa {
+      display: flex; align-items: center; gap: 16px; padding: 18px 24px 18px 16px;
+      background: var(--green); color: #fff; border-radius: 999px; min-height: 76px;
+      transition: background .3s, transform .3s;
+    }
+    .wa:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .wa-icon {
+      width: 46px; height: 46px; border-radius: 50%; background: var(--wa);
+      display: grid; place-items: center; flex: none;
+    }
+    .wa-text { flex: 1; display: flex; flex-direction: column; }
+    .wa-text strong { font-family: "Cormorant Garamond", serif; font-weight: 400; font-size: 24px; line-height: 1.1; }
+    .wa-text small { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mint); }
+    .contato-note { margin-top: 16px; font-size: 14px; color: var(--ink-soft); text-align: center; }
+    .contato-note a { color: var(--ink); border-bottom: 1px solid var(--line); }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 13px; color: var(--ink-soft); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a:hover { color: var(--ink); }
+
+    /* Responsivo */
+    @media (max-width: 860px) {
+      .hero-grid, .contato-grid { grid-template-columns: 1fr; }
+      .hero-figure { aspect-ratio: 5/4; height: auto; max-height: 440px; }
+    }
+    @media (max-width: 560px) {
+      .exp-item { grid-template-columns: 36px 1fr; }
+      .exp-time { grid-column: 2; }
+      .hero-actions .btn { width: 100%; }
+      .info div { grid-template-columns: 1fr; gap: 2px; }
+      .wa-text strong { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#inicio">Samuel<em>Massoterapia</em></a>
+      <a class="top-cta" href="#contato">Agendar sessão ↗</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Massoterapia · Itu</p>
+          <h1>Respire fundo.<br>Volte a <em>si.</em></h1>
+          <p class="lead">Massoterapia com tempo, presença e silêncio — para o corpo que carrega o dia inteiro.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#contato">Agendar sessão ↗</a>
+            <a class="btn btn-ghost" href="#experiencias">Ver experiências</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <!-- SUBSTITUA pela foto real do Samuel -->
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1100&q=85"
+               alt="Sessão de massoterapia relaxante em ambiente tranquilo" width="900" height="1120">
+        </figure>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+      <div class="wrap sobre-inner">
+        <p class="eyebrow">Sobre</p>
+        <h2>Um respiro no meio<br>da vida <em>corrida.</em></h2>
+        <p>Meu trabalho começa antes do primeiro toque: na conversa, na escuta e no tempo que cada corpo precisa para se entregar. Sem pressa, sem protocolo engessado — só presença.</p>
+        <p>O consultório foi pensado como um lugar de pausa: luz baixa, som ambiente e temperatura morna. Aqui, você não precisa performar nada. Só respirar.</p>
+        <div class="assinatura">
+          <span class="rule"></span>
+          <p><strong>Samuel</strong><span>Massoterapeuta · 12 anos de prática · 1.400+ sessões</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIAS -->
+    <section class="exp" id="experiencias">
+      <div class="wrap">
+        <p class="eyebrow">Experiências</p>
+        <h2>Toque, calma<br>e <em>leveza.</em></h2>
+        <ul class="exp-list">
+          <li class="exp-item">
+            <span class="exp-num">01</span>
+            <div>
+              <div class="exp-title">Relaxante</div>
+              <p class="exp-desc">Toques longos e contínuos que desaceleram o sistema nervoso e dissolvem a tensão do dia.</p>
+            </div>
+            <span class="exp-time">60 min</span>
+          </li>
+          <li class="exp-item">
+            <span class="exp-num">02</span>
+            <div>
+              <div class="exp-title">Terapêutica</div>
+              <p class="exp-desc">Pressão pontual em pontos de tensão — para dores nas costas, ombros travados e enxaquecas.</p>
+            </div>
+            <span class="exp-time">60 min</span>
+          </li>
+          <li class="exp-item">
+            <span class="exp-num">03</span>
+            <div>
+              <div class="exp-title">Pedras quentes</div>
+              <p class="exp-desc">Calor profundo e óleos mornos: a experiência mais lenta e mais aconchegante da casa.</p>
+            </div>
+            <span class="exp-time">90 min</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CITAÇÃO -->
+    <section class="quote">
+      <div class="wrap">
+        <blockquote>“Não é sobre parar.<br>É sobre <em>respirar</em> antes de seguir.”</blockquote>
+        <p class="quote-by">— Samuel</p>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+      <div class="wrap contato-grid">
+        <div>
+          <p class="eyebrow">Agendamento</p>
+          <h2>Seu momento<br>é <em>agora.</em></h2>
+          <p class="lead">Sessões de 60 e 90 minutos, em consultório próprio no Centro. Atendimento de terça a sábado, das 9h às 19h.</p>
+          <dl class="info">
+            <div><dt>Endereço</dt><dd>Rua Harmonia, 000 — Centro, Itu</dd></div>
+            <div><dt>Horário</dt><dd>Terça a sábado · 9h — 19h</dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://instagram.com/samuelmassoterapia" target="_blank" rel="noopener">@samuelmassoterapia</a></dd></div>
+          </dl>
+        </div>
+
+        <div>
+          <a id="whatsapp" class="wa" href="#" aria-label="Agendar sessão pelo WhatsApp com Samuel">
+            <span class="wa-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </span>
+            <span class="wa-text">
+              <strong>Agendar pelo WhatsApp</strong>
+              <small>Resposta em até 1h útil</small>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <p class="contato-note">Prefere e-mail? <a href="mailto:oi@samuelmassoterapia.com.br">oi@samuelmassoterapia.com.br</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© Samuel Massoterapia · Itu</span>
+      <a href="https://www.instagram.com/savioli.tecnologia/" target="_blank" rel="noopener">Desenvolvido por Savioli Tecnologia</a>
+    </div>
+  </footer>
+
+  <script>
+    // Troque 5511999999999 pelo número real: 55 + DDD + número
+    const WHATSAPP_NUMBER = "5511999999999";
+    const MSG = "Oi, Samuel! Vim pelo site e quero agendar uma sessão de massoterapia.";
+    const wa = document.getElementById("whatsapp");
+    wa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG)}`;
+    wa.target = "_blank";
+    wa.rel = "noopener noreferrer";
+  </script>
+</body>
+</html>

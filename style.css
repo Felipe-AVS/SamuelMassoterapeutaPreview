@@ -4,25 +4,25 @@
 
 /* ---------- TOKENS ---------- */
 :root {
-    --green-900: #132620;
-    --green-800: #1E3A32;
-    --green-700: #2A4A40;
-    --mint-300: #B7E1D3;
-    --mint-100: #E4F1EA;
-    --terra: #C97B5A;
-    --terra-soft: #E8B79E;
-    --sand-50: #FBF9F4;
-    --sand-100: #F4EFE6;
-    --sand-200: #E9E2D5;
-    --ink: #1B2622;
-    --ink-soft: #5A6B63;
+    --green-900: #2E3A22;
+    --green-800: #4A5A36;
+    --green-700: #5C6B45;
+    --mint-300: #C9D3B0;
+    --mint-100: #E6EBD6;
+    --terra: #7D8B5C;
+    --terra-soft: #B9C49A;
+    --sand-50: #F6F2E8;
+    --sand-100: #EFE9DB;
+    --sand-200: #E2DBC8;
+    --ink: #2B2A24;
+    --ink-soft: #6A6A5C;
     --white: #FFFFFF;
     --wa: #25D366;
     --line: rgba(27, 38, 34, .10);
     --line-strong: rgba(27, 38, 34, .18);
 
-    --font-display: "Instrument Serif", Georgia, serif;
-    --font-sans: "Inter Tight", system-ui, -apple-system, sans-serif;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
 
     --s1: 4px;
     --s2: 8px;
